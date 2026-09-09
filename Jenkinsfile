@@ -1,9 +1,9 @@
-
+```groovy
 pipeline {
     agent any
 
     environment {
-        PYTHON = 'C:\\Users\\madhan\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+        PYTHON = 'C:\\Users\\madha\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
     }
 
     stages {
@@ -35,3 +35,4 @@ pipeline {
         }
     }
 }
+```
