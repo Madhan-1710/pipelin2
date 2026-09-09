@@ -1,21 +1,38 @@
-pipeline{
+```groovy
+pipeline {
     agent any
-    stages{
-        stage('Checkout'){
-            steps{
-                git branch: 'main', url: 'https://github.com/Madhan-1710/pipelin2.git'
+
+    environment {
+        PYTHON = 'C:\\Users\\madhan\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Madhan-1710/pipelin2.git'
             }
         }
 
-        stage('Install Dependencies'){
-            steps{
-                bat 'pip install -r requirements.txt'
+        stage('Check Python') {
+            steps {
+                bat '"%PYTHON%" --version'
+                bat '"%PYTHON%" -m pip --version'
             }
         }
-        stage('Run Unit Tests'){
-            steps{
-                bat 'pytest test_app.py -v'
+
+        stage('Install Dependencies') {
+            steps {
+                bat '"%PYTHON%" -m pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Unit Tests') {
+            steps {
+                bat '"%PYTHON%" -m pytest test_app.py -v'
             }
         }
     }
 }
+```
