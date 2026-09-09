@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/Madhan-1710/pipeline2.git'
+                git branch: 'main', url: 'https://github.com/Madhan-1710/pipelin2.git'
             }
         }
 
